@@ -1,0 +1,225 @@
+/* ---------------------------------------------------------
+   RESET E BASE
+--------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* impede rolagem da página */
+}
+
+/* Contêiner principal da página */
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;   /* A tela inteira, inclusive no F11 */
+    overflow: hidden; /* Impede que a página role */
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    background-color: rgb(225, 222, 199);
+    color: rgb(35, 32, 24);
+}
+
+/* ---------------------------------------------------------
+   CABEÇALHO
+--------------------------------------------------------- */
+
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    position: relative; /* chave para permitir sobreposição */
+    background-color: rgb(225, 222, 199);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.title img {
+    width: 30%;         /* ajuste o tamanho desejado */
+    max-width: 380px;    /* limite máximo para telas grandes */
+    height: auto;
+    position: absolute;   /* permite sobrepor */
+    top: -110px;           /* sobe a imagem */
+    left: 160px;            /* centraliza horizontalmente */
+    transform: translateX(-50%) rotate(-6deg); /* centraliza + inclinação */
+    z-index: 0;          /* garante que fique acima do banner */
+    pointer-events: none; /* permite clicar nas caixas mesmo com a imagem sobreposta */
+}
+
+
+/* ---------------------------------------------------------
+   BANNER DE FOTOS
+--------------------------------------------------------- */
+.banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.banner-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.banner-row img {
+    height: 160px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* ---------------------------------------------------------
+   ÁREA DE NOVO ITEM
+--------------------------------------------------------- */
+.newItem {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.newItem input {
+    border: 1px solid rgb(35, 32, 24);
+    padding: 10px;
+    font-size: 16px;
+    background-color: white;
+    width: 180px;
+}
+
+/* Campo maior para Local de Interesse */
+#newNome {
+    width: 320px;
+}
+
+.addBtn {
+    padding: 10px 15px;
+    background-color: rgb(35, 32, 24);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.addBtn:hover {
+    background-color: #2ab53a;
+}
+
+/* ---------------------------------------------------------
+   FILTRO
+--------------------------------------------------------- */
+.filterItem {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#filtroPais {
+    border: 1px solid rgb(35, 32, 24);
+    padding: 10px;
+    font-size: 16px;
+    background-color: white;
+    width: 200px;
+}
+
+.filterBtn {
+    padding: 10px 15px;
+    background-color: rgb(35, 32, 24);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filterBtn:hover {
+    background-color: #2ab53a;
+}
+
+/* ---------------------------------------------------------
+   TABELA
+--------------------------------------------------------- */
+
+.items {
+    flex: 1; /* cresce para ocupar o espaço restante */
+    min-height: 0;   /* importante para permitir encolhimento */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;      /* encolhe quando há poucas linhas */
+}
+
+/* Contêiner que vai rolar */
+.table-container {
+    width: 90%;
+
+    /* Altura automática quando há poucas linhas */
+    height: auto;
+    max-height: 40vh;   /* só limita quando cresce demais */
+
+    overflow-y: auto;   /* rolagem interna */
+    overflow-x: hidden;
+
+    border: 1px solid black;
+    background-color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+}
+
+/* Cabeçalho fixo */
+table th {
+    position: sticky;
+    top: 0;
+    background-color: lightgray;
+    z-index: 2;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 6px 10px;
+}
+
+/* Linhas alternadas */
+tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+/* Hover apenas nas linhas de dados */
+table tr:not(:first-child):hover {
+    background-color: rgb(200, 199, 199);
+}
+
+/* Ícone de delete */
+.close:hover {
+    color: #f44336;
+    font-weight: bold;
+}
+
+/* Centralizar todas as colunas, exceto a primeira */
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5),
+th:nth-child(2),
+th:nth-child(3),
+th:nth-child(4),
+th:nth-child(5) {
+    text-align: center;
+}

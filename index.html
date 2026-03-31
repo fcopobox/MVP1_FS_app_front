@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>QueroVisitar!</title>
+</head>
+
+<body>
+    <header>
+        <div class="banner">
+            <div class="banner-row">
+                <img src="images/Ita_Firenze.png" alt="Florença, Itália">
+                <img src="images/UK_TLondres.png" alt="Torre de Londres, Reino Unido">
+                <img src="images/Fra_TEifel.png" alt="Torre Eifel, Paris, França    ">
+                <img src="images//Lux_Viande.png" alt="Castelo de Vianden, Luxemburgo">
+                <img src="images/Por_Porto.png" alt="Rio Douro, Porto, Portugal">
+                <img src="images/Por_TBelem.png" alt="Torre de Belém, Lisboa, Portugal">
+                <img src="images/Praia_Bra.png" alt="Por do Sol na Praia, Florianópolis, Brasil">
+            </div>
+        </div>
+
+        <div class="title">
+            <img src="images/Carimbo.png" alt="Carimbo de Viagem">
+            <!--<h1>Quero Visitar!</h1>-->
+        </div>
+    </header>
+
+    <!-- Opções para adicionar um novo item -->
+    <section class="newItem">
+        <input type="text" id="newNome" placeholder="Novo local de interesse:">
+        <input type="text" id="newCidade" placeholder="Cidade:">
+        <input type="text" id="newPais" placeholder="País:">
+        <input type="text" id="newPrioridade" placeholder="Prioridade:">
+        <button onclick="newItem()" class="addBtn">Adicionar</button>
+    </section>
+    
+    <!-- Campo de filtro -->
+    <section class="filterItem">
+        <input type="text" id="filtroPais" placeholder="Filtrar por país">
+        <button onclick="filtrarPorPais()" class="filterBtn">Filtrar</button>
+    </section>
+
+    <!-- Tabela com items existentes -->
+    <section class="items">
+        <div class="table-container">
+            <table id="myTable">
+                <tr>
+                    <th>Local de Interesse</th>
+                    <th>Cidade</th>
+                    <th>País</th>
+                    <th>Prioridade</th>
+                    <th>
+                        <img src="images/Lixeira.png" width="15px" height="15px"
+                            alt="Lixeira" title="Remover item">
+                    </th>
+                 </tr>
+            </table>
+        </div>
+    </section>
+
+    <script src="javascript/scripts.js"></script>
+</body>
+
+</html>
