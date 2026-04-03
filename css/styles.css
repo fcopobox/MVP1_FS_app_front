@@ -22,7 +22,7 @@ html, body {
 }
 
 body {
-    font-family: Tahoma, sans-serif;
+    font-family: 'Roboto', sans-serif; /* fonte do Google fonts */
     background-color: rgb(225, 222, 199);
     color: rgb(35, 32, 24);
 }

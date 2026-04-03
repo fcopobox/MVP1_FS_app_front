@@ -87,7 +87,7 @@ const newItem = () => {
     alert("Prioridade precisa ser número!");
     return;
   }
-  // Verificação de duplicidade ANTES de enviar ao backend
+  // Verificação de duplicidade antes de enviar ao backend
   if (itemDuplicado(inputNome, inputCidade, inputPais)) {
     alert("Este local já existe na lista!");
     return;
@@ -242,5 +242,13 @@ const filtrarPorPais = () => {
 document.getElementById("filtroPais").addEventListener("input", function () {
     if (this.value.trim() === "") {
         filtrarPorPais(); // chama o backend sem precisar clicar no botão
+    }
+});
+
+// Pressionar Enter no campo de filtro aciona o botão "Filtrar"
+document.getElementById("filtroPais").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // evita submit de formulários
+        filtrarPorPais();       // chama a função de filtro
     }
 });
